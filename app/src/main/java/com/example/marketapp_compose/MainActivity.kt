@@ -19,10 +19,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.marketapp_compose.component.MainTopBar
-import com.example.marketapp_compose.component.TopMenu
+import com.example.marketapp_compose.component.*
+import com.example.marketapp_compose.model.dummyListBanner
+import com.example.marketapp_compose.model.dummyListTopCategory
 import com.example.marketapp_compose.model.dummyListTopMenus
 import com.example.marketapp_compose.ui.theme.MarketAppComposeTheme
+import com.gunder.market.model.dummyListBottomCategory
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +61,9 @@ fun MarketApp(){
     Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
         MainTopBar()
         MainTopMenu()
+        MainTopCategory()
+        MainBottomCategory()
+        MainCardCategory()
     }
 }
 
@@ -67,6 +72,19 @@ fun MarketApp(){
 fun MarketAppPreview(){
     MarketAppComposeTheme {
         MarketApp()
+    }
+}
+
+@Composable
+fun MainTopBar(){
+    TopBar()
+}
+
+@Composable
+@Preview(showBackground = true)
+fun MainTopBarPreview(){
+    MarketAppComposeTheme {
+        MainTopBar()
     }
 }
 
@@ -84,5 +102,56 @@ fun MainTopMenu(){
 fun MainTopMenuPreview(){
     MarketAppComposeTheme {
         MainTopMenu()
+    }
+}
+
+@Composable
+fun MainTopCategory(){
+    LazyRow(modifier = Modifier.offset(10.dp)){
+        items(dummyListTopCategory){
+            TopCategory(listCategory = it)
+        }
+    }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun MainTopCategoryPreview(){
+    MarketAppComposeTheme {
+        MainTopCategory()
+    }
+}
+
+@Composable
+fun MainBottomCategory(){
+    LazyRow(modifier = Modifier.offset(10.dp)){
+        items(dummyListBottomCategory){
+            BottomCategory(listBottomCategory = it)
+        }
+    }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun MainBottomCategoryPreview(){
+    MarketAppComposeTheme {
+        MainBottomCategory()
+    }
+}
+
+@Composable
+fun MainCardCategory(){
+   LazyRow(modifier = Modifier.offset(10.dp)){
+       items(dummyListBanner){
+           CardCategory(listBanner = it)
+       }
+   }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun MainCardCategoryPreview(){
+    MarketAppComposeTheme {
+        MainCardCategory()
     }
 }
