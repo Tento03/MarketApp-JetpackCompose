@@ -13,6 +13,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -59,14 +60,19 @@ fun DefaultPreview() {
 
 @Composable
 fun MarketApp(){
-    Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
-        MainTopBar()
-        MainTopMenu()
-        MainTopCategory()
-        MainBottomCategory()
-        MainCardCategory()
-        MainBannerHorizontal()
-        MainBannerVertical()
+    Scaffold(bottomBar = { BottomNavigationBar() }) {
+        Column(modifier = Modifier
+            .verticalScroll(rememberScrollState())
+            .padding(it)
+        ) {
+            MainTopBar()
+            MainTopMenu()
+            MainTopCategory()
+            MainBottomCategory()
+            MainCardCategory()
+            MainBannerHorizontal()
+            MainBannerVertical()
+        }
     }
 }
 
