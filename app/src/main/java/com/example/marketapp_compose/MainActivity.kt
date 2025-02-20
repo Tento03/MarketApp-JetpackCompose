@@ -64,6 +64,7 @@ fun MarketApp(){
         MainTopCategory()
         MainBottomCategory()
         MainCardCategory()
+        MainImageCategory()
     }
 }
 
@@ -141,11 +142,11 @@ fun MainBottomCategoryPreview(){
 
 @Composable
 fun MainCardCategory(){
-   LazyRow(modifier = Modifier.offset(10.dp)){
-       items(dummyListBanner){
-           CardCategory(listBanner = it)
-       }
-   }
+    LazyRow(modifier = Modifier.offset(10.dp)){
+        items(dummyListBanner){
+            CardCategory(listBanner = it)
+        }
+    }
 }
 
 @Composable
@@ -154,4 +155,15 @@ fun MainCardCategoryPreview(){
     MarketAppComposeTheme {
         MainCardCategory()
     }
+}
+
+@Composable
+fun MainImageCategory(){
+    ImageCategory()
+}
+
+@Composable
+@Preview(showBackground = true)
+fun MainImageCategoryPreview(){
+    ImageCategory()
 }
