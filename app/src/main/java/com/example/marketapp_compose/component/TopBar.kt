@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.sp
 import com.example.marketapp_compose.ui.theme.MarketAppComposeTheme
 
 @Composable
-fun MainTopBar(){
+fun TopBar(){
     Column(modifier = Modifier.padding(16.dp)) {
         Row(modifier = Modifier.width(IntrinsicSize.Max),
             verticalAlignment = Alignment.CenterVertically,
@@ -77,8 +77,8 @@ fun MainTopBar(){
 
 @Composable
 @Preview(showBackground = true)
-fun MainTopBarPreview(){
+fun TopBarPreview(){
     MarketAppComposeTheme {
-        MainTopBar()
+        TopBar()
     }
 }
