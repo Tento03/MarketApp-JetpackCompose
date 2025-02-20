@@ -12,9 +12,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.marketapp_compose.R
+import com.example.marketapp_compose.ui.theme.MarketAppComposeTheme
 
 @Composable
-fun ImageCategory(){
+fun BannerHorizontal(){
     Column(modifier = Modifier
         .fillMaxWidth()
         .padding(16.dp),
@@ -45,5 +46,7 @@ fun ImageCategory(){
 @Composable
 @Preview(showBackground = true)
 fun ImageCategoryPreview(){
-    ImageCategory()
+   MarketAppComposeTheme {
+       BannerHorizontal()
+   }
 }

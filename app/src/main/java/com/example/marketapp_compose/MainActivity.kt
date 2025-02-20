@@ -21,6 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.marketapp_compose.component.*
 import com.example.marketapp_compose.model.dummyListBanner
+import com.example.marketapp_compose.model.dummyListCardForYou
 import com.example.marketapp_compose.model.dummyListTopCategory
 import com.example.marketapp_compose.model.dummyListTopMenus
 import com.example.marketapp_compose.ui.theme.MarketAppComposeTheme
@@ -64,7 +65,8 @@ fun MarketApp(){
         MainTopCategory()
         MainBottomCategory()
         MainCardCategory()
-        MainImageCategory()
+        MainBannerHorizontal()
+        MainBannerVertical()
     }
 }
 
@@ -158,12 +160,31 @@ fun MainCardCategoryPreview(){
 }
 
 @Composable
-fun MainImageCategory(){
-    ImageCategory()
+fun MainBannerHorizontal(){
+    BannerHorizontal()
 }
 
 @Composable
 @Preview(showBackground = true)
-fun MainImageCategoryPreview(){
-    ImageCategory()
+fun MainBannerHorizontalPreview(){
+    MarketAppComposeTheme {
+        MainBannerHorizontal()
+    }
+}
+
+@Composable
+fun MainBannerVertical(){
+   LazyRow(modifier = Modifier.offset(10.dp)){
+       items(dummyListCardForYou){
+           BannerVertical(listCardForYou = it)
+       }
+   }
+} 
+
+@Composable
+@Preview(showBackground = true)
+fun MainBannerVerticalPreview(){
+    MarketAppComposeTheme {
+        MainBannerVertical()
+    }
 }
