@@ -162,8 +162,3 @@ fun MainImageCategory(){
     ImageCategory()
 }
 
-@Composable
-@Preview(showBackground = true)
-fun MainImageCategoryPreview(){
-    ImageCategory()
-}

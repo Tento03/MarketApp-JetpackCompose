@@ -37,6 +37,7 @@ fun ImageCategory(){
             Card(shape = RoundedCornerShape(8.dp)) {
                 Image(painter = painterResource(id = R.drawable.banner_horizontal_4), contentDescription = null)
             }
+
         }
     }
 }
